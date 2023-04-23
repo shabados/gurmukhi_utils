@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Copied from https://github.com/shabados/gurmukhiutils/blob/b7a1ca9f0d341b64715158893afb93675c773823/gurmukhiutils/unicode.py
 require 'strscan'
 
@@ -108,7 +110,7 @@ module GurmukhiUtils
     'Î'.ord => '꠳ਯ',      # half-yayya
     'ï'.ord => '꠴ਯ',      # open-top yayya
     'î'.ord => '꠵ਯ'       # open-top half-yayya
-  }
+  }.freeze
 
   ASCII_TO_SL_REPLACEMENTS = {
     'ˆØI' => 'ੀਁ', # Handle pre-bihari-bindi with unused adakbindi
@@ -160,7 +162,6 @@ module GurmukhiUtils
     ascii_sihari_pattern = Regexp.new("(i)([#{ascii_base_letters}])")
     string = string.gsub(ascii_sihari_pattern, '\2\1')
 
-
     # Map any ASCII / Unicode Gurmukhi to Sant Lipi format
     ASCII_TO_SL_REPLACEMENTS.each do |key, value|
       string.gsub!(key, value)
@@ -170,9 +171,7 @@ module GurmukhiUtils
       string.gsub!(key, value)
     end
 
-
-string = string.chars.map { |c| ASCII_TO_SL_TRANSLATION[c.ord] || c }.join
-
+    string = string.chars.map { |c| ASCII_TO_SL_TRANSLATION[c.ord] || c }.join
 
     string = unicode_normalize(string)
 
