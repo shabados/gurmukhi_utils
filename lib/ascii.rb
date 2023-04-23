@@ -98,7 +98,18 @@ module GurmukhiUtils
     '੍ਨ' => "\u02dc" # small tilde (˜)
   }.freeze
 
-  # TODO: Raise warnings  if incorrect vowel syntax
+  # Warnings
+  ABOVE_VOWEL_MARKS = ['ੇ', 'ੈ', 'ੋ', 'ੌ'].join
+  BELOW_VOWEL_MARKS = ['ੁ', 'ੂ'].join
+  def self.check_warnings(string)
+    warnings = []
+
+    warnings << 'Incorrect vowel syntax (above vowel)' if string.match?(/ਾ[#{ABOVE_VOWEL_MARKS}]ਾ[#{ABOVE_VOWEL_MARKS}]/)
+
+    warnings << 'Incorrect vowel syntax (below vowel)' if string.match?(/ਾ[#{BELOW_VOWEL_MARKS}]ਾ[#{BELOW_VOWEL_MARKS}]/)
+
+    return warnings
+  end
 
   def self.ascii(string)
     string = unicode_normalize(string)
@@ -118,12 +129,11 @@ module GurmukhiUtils
     string.gsub!(regex, 'i\1\2')
 
     # Fix below-base-letter + u vowel positioning
-    ascii_below_base_letters = 'RÍHç†œ˜´@'
+    ascii_below_base_letters = 'RÍHç†œ˜'
     below_vowel_mappings = {
       'u' => 'ü',
       'U' => '¨'
     }
-
     below_vowel_mappings.each do |key, value|
       string.gsub!(/([#{ascii_below_base_letters}][#{ascii_modifiers}]*)#{key}([#{ascii_modifiers}]*)/, "\\1#{value}\\2")
     end
