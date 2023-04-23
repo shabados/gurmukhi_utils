@@ -5,8 +5,7 @@ require 'spec_helper'
 require 'gurmukhi_utils'
 
 def triple_unicode(string)
-  return GurmukhiUtils.unicode(string)
-  # GurmukhiUtils.unicode(GurmukhiUtils.unicode(GurmukhiUtils.unicode(string)))
+  return GurmukhiUtils.unicode(GurmukhiUtils.unicode(GurmukhiUtils.unicode(string)))
 end
 
 RSpec.describe GurmukhiUtils do
