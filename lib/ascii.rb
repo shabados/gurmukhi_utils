@@ -134,6 +134,7 @@ module GurmukhiUtils
       'u' => 'ü',
       'U' => '¨'
     }
+
     below_vowel_mappings.each do |key, value|
       string.gsub!(/([#{ascii_below_base_letters}][#{ascii_modifiers}]*)#{key}([#{ascii_modifiers}]*)/, "\\1#{value}\\2")
     end
