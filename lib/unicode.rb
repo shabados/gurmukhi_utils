@@ -154,7 +154,7 @@ module GurmukhiUtils
   #   unicode("gurU")
   #   #=> "ਗੁਰੂ"
   ##
-  def self.to_unicode(string, unicode_standard = 'Unicode Consortium')
+  def self.unicode(string, unicode_standard = 'Unicode Consortium')
     # Move ASCII sihari before mapping to unicode
     ascii_base_letters = '\\a-zA-Z|^&Îîï'
     ascii_sihari_pattern = Regexp.new("(i)([#{ascii_base_letters}])")
