@@ -243,22 +243,22 @@ module GurmukhiUtils
 
   def self.sanitize_unicode(string)
     unicode_sanitization_map = {
-      'ਓ' => 'ੴ',
-      'ਅਾ' => 'ਆ',
-      'ੲਿ' => 'ਇ',
-      'ੲੀ' => 'ਈ',
-      'ੴੁ' => 'ਉ',
-      'ੴੂ' => 'ਊ',
-      'ੲੇ' => 'ਏ',
-      'ਅੈ' => 'ਐ',
-      'ਅੋ' => 'ਔ',
-      'ਲ਼' => 'ਲ਼',
-      'ਸ਼' => 'ਸ਼',
-      'ਖ਼' => 'ਖ਼',
-      'ਗ਼' => 'ਗ਼',
-      'ਜ਼' => 'ਜ਼',
-      'ਫ਼' => 'ਫ਼',
-      'ੱਅ' => 'ਁ'
+      "\u0a73\u0a4b" => "\u0a13", # ਓ
+      "\u0a05\u0a3e" => "\u0a06",  # ਅ + ਾ = ਆ
+      "\u0a72\u0a3f" => "\u0a07",  # ਇ
+      "\u0a72\u0a40" => "\u0a08",  # ਈ
+      "\u0a73\u0a41" => "\u0a09",  # ਉ
+      "\u0a73\u0a42" => "\u0a0a",  # ਊ
+      "\u0a72\u0a47" => "\u0a0f",  # ਏ
+      "\u0a05\u0a48" => "\u0a10",  # ਐ
+      "\u0a05\u0a4c" => "\u0a14",  # ਔ
+      "\u0a32\u0a3c" => "\u0a33",  # ਲ਼
+      "\u0a38\u0a3c" => "\u0a36",  # ਸ਼
+      "\u0a16\u0a3c" => "\u0a59",  # ਖ਼
+      "\u0a17\u0a3c" => "\u0a5a",  # ਗ਼
+      "\u0a1c\u0a3c" => "\u0a5b",  # ਜ਼
+      "\u0a2b\u0a3c" => "\u0a5e",  # ਫ਼
+      "\u0a71\u0a02" => "\u0a01" # ਁ adak bindi (quite literally never used today or in the Shabad OS Database, only included for parity with the Unicode block)
     }
 
     unicode_sanitization_map.each do |key, value|
