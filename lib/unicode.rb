@@ -160,6 +160,7 @@ module GurmukhiUtils
     ascii_sihari_pattern = Regexp.new("(i)([#{ascii_base_letters}])")
     string = string.gsub(ascii_sihari_pattern, '\2\1')
 
+
     # Map any ASCII / Unicode Gurmukhi to Sant Lipi format
     ASCII_TO_SL_REPLACEMENTS.each do |key, value|
       string.gsub!(key, value)
@@ -169,7 +170,9 @@ module GurmukhiUtils
       string.gsub!(key, value)
     end
 
-    string = string.chars.map { |c| ASCII_TO_SL_TRANSLATION[c.ord] }.join
+
+string = string.chars.map { |c| ASCII_TO_SL_TRANSLATION[c.ord] || c }.join
+
 
     string = unicode_normalize(string)
 
