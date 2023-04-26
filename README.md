@@ -8,7 +8,7 @@ This library is a work in progress! Note that the API can change unexpectedly wh
 
 ## Contribute
 
-If you want to help, or learn more about how the project structured, see the [CONTRIBUTING.md](./CONTRIBUTING.md) doc!
+If you want to help, or learn more about how the project is structured, see the [CONTRIBUTING.md](./CONTRIBUTING.md) doc!
 
 ## Community
 
