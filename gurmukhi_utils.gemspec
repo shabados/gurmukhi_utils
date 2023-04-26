@@ -4,7 +4,7 @@ require_relative 'lib/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'gurmukhi_utils'
-  spec.version       = GurmukhiUtils::VERSION
+  spec.version       = '0.0.1'
   spec.authors       = ['Dilraj Singh Somel (dsomel21)']
   spec.email         = ['dsomel21@gmail.com']
 
