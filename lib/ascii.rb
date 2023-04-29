@@ -129,7 +129,7 @@ module GurmukhiUtils
     string.gsub!(regex, 'i\1\2')
 
     # Fix below-base-letter + u vowel positioning
-    ascii_below_base_letters = 'RÍHç†œ˜'
+    ascii_below_base_letters = 'RÍHç†œ˜´@'
     below_vowel_mappings = {
       'u' => 'ü',
       'U' => '¨'
