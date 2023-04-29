@@ -98,18 +98,7 @@ module GurmukhiUtils
     '੍ਨ' => "\u02dc" # small tilde (˜)
   }.freeze
 
-  # Warnings
-  ABOVE_VOWEL_MARKS = ['ੇ', 'ੈ', 'ੋ', 'ੌ'].join
-  BELOW_VOWEL_MARKS = ['ੁ', 'ੂ'].join
-  def self.check_warnings(string)
-    warnings = []
-
-    warnings << 'Incorrect vowel syntax (above vowel)' if string.match?(/ਾ[#{ABOVE_VOWEL_MARKS}]ਾ[#{ABOVE_VOWEL_MARKS}]/)
-
-    warnings << 'Incorrect vowel syntax (below vowel)' if string.match?(/ਾ[#{BELOW_VOWEL_MARKS}]ਾ[#{BELOW_VOWEL_MARKS}]/)
-
-    return warnings
-  end
+  # TODO: Raise warnings  if incorrect vowel syntax
 
   def self.ascii(string)
     string = unicode_normalize(string)
