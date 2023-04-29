@@ -43,7 +43,7 @@ RSpec.describe GurmukhiUtils do
           'ਖ਼ੁੱਰੋ' => '^u`ro',
           'ਦੋੁਆਲੈ' => 'douAwlY',
           'ਦ੍ਰਿੜੑੀਆ' => 'idRV@IAw',
-          # 'ਕਾਨੑੁ' => 'kwn@ü',
+          'ਕਾਨੑੁ' => 'kwn@ü',
           'ਜਿੰਨੑੀ' => 'ijMn@I',
           'ਓਲੑਾ' => 'El@w',
           'ਸਾਮੑੈ' => 'swm@Y',
