@@ -1,6 +1,7 @@
 AllCops:
   NewCops: enable
   TargetRubyVersion: 3.2.1
+  SuggestExtensions: false
 
 Layout/HashAlignment:
   EnforcedHashRocketStyle: key

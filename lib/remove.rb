@@ -29,10 +29,10 @@ module GurmukhiUtils
   # @example
   #   remove_regex("ਸਬਦ. ਸਬਦ, ਸਬਦ; ਸਬਦ", [".+\\s"])
   #   # => "ਸਬਦ"
-  def remove_regex(string, patterns)
-    patterns.each { |pattern| string.gsub!(Regexp.new(pattern), '') }
-    string.squeeze!(' ').strip!
-    string
+  def self.remove_regex(string, patterns)
+    patterns.each { |pattern| string.gsub!(pattern, '') }
+    string = string.squeeze(' ').strip
+    return string
   end
 
   # Attempts to remove line endings as best as possible.
